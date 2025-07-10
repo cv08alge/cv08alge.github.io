@@ -371,7 +371,7 @@ header {
 	transform: translateY(-5px); /* تأثير طفيف */
 }
 .btnPdf img {
-	height: 25px;
+	height: 3vh;
 	margin-bottom: -2px;
 }
 /* 
