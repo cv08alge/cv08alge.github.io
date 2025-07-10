@@ -11,7 +11,11 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
+}/* 
+*:focus-visible{
+	caret-shape: underscore;
+	 border: 2px black	;
+} */
 
 body {
 	background: linear-gradient(135deg, #1a3a6c 0%, #2c5282 100%);
@@ -95,6 +99,7 @@ header {
 	top: 0;
 	left: 0;
 	z-index: 3;
+	cursor: pointer;
 	background-color: #0000009e;
 }
 .imgCv img {

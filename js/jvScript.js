@@ -9,11 +9,16 @@ inputFile.addEventListener("change", async (e) => {
   }
   const imgCntnt = URL.createObjectURL(file);
 gebi('uploadedImage').src = imgCntnt;
+gebi('contentToPdf').focus();
 })
 
 function gebi(pr) {return document.getElementById(pr)}
+
 document.querySelectorAll('div').forEach(el => {
     el.contentEditable = true
+    el.addEventListener('focus',ev => {
+      ev.style.border = '30px black soled'
+    })
 });
 
 
