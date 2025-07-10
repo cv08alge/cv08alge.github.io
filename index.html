@@ -209,42 +209,12 @@
 				>download PDF <img src="imgs/download-svgrepo-com.svg" alt="dw"
 			/></strong>
 		</button>
+		<div id="isDwnlod" class="isdwnld">Downloaded successfully <img src="imgs/success-round-svgrepo-com.svg" alt="" style="  height:27px;width: 33px;;"></div>
         <script src="js/jvScript.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 		<script>
-			function generatePdf() {
-				const element = geby("contentToPdf"); // تحديد العنصر
-				document.querySelector("body").style.padding = 0;
-				geby("contentToPdf").style.margin = 0;
-				geby("contentToPdf").style.paddingBottom = 0;
-				geby("contentToPdf").style.height = "29cm";
-
-				const options = {
-					margin: [0, 0, 0, 0], // تعيين الهوامش إلى 0 من جميع الجوانب
-					filename: "my-cv.pdf",
-					image: { type: "jpeg", quality: 0.98 },
-					html2canvas: {
-						scale: 2,
-						logging: true,
-						dpi: 192,
-						letterRendering: true,
-						scrollY: 0,
-        useCORS: true 
-					}, // أضف scrollY: 0
-					jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-				};
-				html2pdf().set(options).from(element).save(); // سلسلة الأوامر لتنفيذ التحويل
-				setTimeout(() => {
-					document.querySelector("body").style.padding = "20px";
-					geby("contentToPdf").style.margin = "20px";
-					geby("contentToPdf").style.paddingBottom = "50px";
-					geby("contentToPdf").style.height = "30.3cm";
-				}, 100);
-			}
-			function geby(el) {
-				return document.getElementById(el);
-			}
+			
 
 			/* function changeGlobalFont(newFont) {
     // الوصول إلى العنصر الجذر (<html>) لتغيير متغيرات CSS

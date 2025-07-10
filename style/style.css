@@ -374,6 +374,37 @@ header {
 	height: 3vh;
 	margin-bottom: -2px;
 }
+.isdwnld{
+	background: #4CAF50;
+    color: #fbfbfb;
+    border: 2px solid #27662a;
+    width: 90%;
+    text-align: center;
+    font-size: 40px;
+    border-radius: 10px;
+    position: fixed;
+	top: 100%;
+	padding: 10px;
+    transition: 2s;
+}
+.toAp{
+    
+	animation: moveUpDown 2s  alternate ; 
+}
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0); /* في البداية يكون في مكانه الأصلي */
+    }
+    25% {
+       transform: translateY(calc(-100% - 20px)); /* يصعد 50 بكسل للأعلى (25% من مدة الثانية) */
+    }
+    75% {
+     transform: translateY(calc(-100% - 20px)); /* ينزل 50 بكسل للأسفل (75% من مدة الثانية) */
+    }
+    100% {
+        transform: translateY(0); /* يعود لمكانه الأصلي (عند انتهاء الثانية) */
+    }
+}
 /* 
         @media (max-width: 480px) {
             .name {
