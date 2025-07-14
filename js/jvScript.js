@@ -11,11 +11,41 @@ inputFile.addEventListener("change", async e => {
 	gebi("contentToPdf").focus();
 });
 
-document.querySelectorAll("div").forEach(el => {
+document.querySelectorAll(".inpt").forEach(el => {
 	el.contentEditable = true;
 });
-gebi('contentToPdf').contentEditable = false;
-document.querySelector('.page').contentEditable = false;
+
+
+
+/* Parameters */
+
+
+const rootElement = document.documentElement;
+function changeGlobalRoot(elId, rootEl) {
+	gebi(elId).addEventListener('change', ()=> {
+		rootElement.style.setProperty(rootEl, gebi(elId).value);
+});
+    
+}
+function chngBorder(checkbox) {
+	if (checkbox.checked) {
+		rootElement.style.setProperty('--border-div', checkbox.value);
+		console.log(rootElement.style.getPropertyValue('--border-div'));
+	} else {
+		rootElement.style.setProperty('--border-div', 'none');
+		console.log(rootElement.style.getPropertyValue('--border-div'));
+	}
+}
+
+changeGlobalRoot('fontSize','--font-size');
+changeGlobalRoot('fontFamily','--main-font');
+document.querySelectorAll(".color-picker input").forEach(el => {
+		changeGlobalRoot( el.id, `--${el.id}`);
+});
+changeGlobalRoot('heighPrf', '--height-width-profile');
+changeGlobalRoot('brdrRdisImg', '--border-radius-profile');
+changeGlobalRoot('vlmImg', '--height-img');
+
 
 
 

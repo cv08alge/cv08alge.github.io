@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>CV - SLIMANI Abdelhadi</title>
+		<title>votre CV </title>
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -11,14 +11,74 @@
 		<link rel="stylesheet" href="style/style.css" />
 	</head>
 	<body>
+		<div class="prmtr-container">
+			<div class="content" style="grid-template-columns: 1fr 1fr 1fr;">
+				<div class="column">
+					<div >
+						<label for="fontSize">Taille de la police </label><br>
+						<input type="range" id="fontSize" min="5" max="15" value="10" />
+						<!-- <input type="number" id="fontSizeInput" for="fontSize" min="5" max="15" value="10"> -->
+					<br>
+					</div>
+					<div>
+						<label for="fontFamily">Police de caractère</label><br>
+						<select id="fontFamily">
+							<option value="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Segoe UI</option>
+							<option value="'Times New Roman', serif">Times New Roman</option>
+							<option value="'Arial', sans-serif">Arial</option>
+							<option value="'Courier New', monospace">Courier New</option>
+							<option value="'Verdana', sans-serif">Verdana</option>
+							<option value="'Georgia', serif">Georgia</option>
+							<option value="'Tahoma', sans-serif">Tahoma</option>
+						</select>
+					</div>
+					<div>
+					<br>
+						<input type="checkbox" id="borderDiv" value="1px solid #4cc9f0" onchange="chngBorder(this)" checked />
+						<label for="borderDiv">Bordure</label>
+					</div>
+				</div>
+				<div class="column color-picker">
+					
+					<div class="">
+						<label for="color1">Couleur du texte 1</label><br>
+						<input type="color" id="color1" value="#1a3a6c" />
+					</div>
+					<div>
+						<label for="color">Couleur du texte 2</label><br>
+						<input type="color" id="color2" value="#2c5282" />
+					</div>
+					<div>
+						<label for="color">Couleur du texte 3</label><br>
+						<input type="color" id="color3" value="#4cc9f0" />
+					</div>
+					
+				</div>
+				<div class="column">
+					<div ><div>image de profil</div>
+						<label for="heighPrf">volume de cadre de image </label><br>
+						<input type="range" id="heighPrf" min="100" max="400" value="160" />
+					</div>
+					<div >
+						<label for="brdrRdisImg">rayon de la bordure de image</label><br>
+						<input type="range" id="brdrRdisImg" min="0" max="50" value="50" />
+					</div>
+					<div >
+						<label for="vlmImg">volume de image </label><br>
+						<input type="range" id="vlmImg" min="10" max="200" value="100" />
+					</div>
+				</div>
+			</div>	
+			
+		</div>
 		<div id="contentToPdf" class="cv-container">
 			<div class="page">
 				<header>
 					<div class="profile-container">
 						<div>
-							<h1  class="name">SLIMANI Abdelhadi</h1>
-							<div class="title">Physicien Médical</div>
-							<div class="address">N 17 hay ennour debdaba - Bechar</div>
+							<h1  class="name inpt">Nom et prénom</h1>
+							<div class="title inpt">Spécialisation universitaire</div>
+							<div class="address inpt">N 123 hay ahmed ahmed - Bechar</div>
 						</div>
 						<div class="profile-photo">
 							<label for="input-file" id="drop-area">
@@ -35,15 +95,15 @@
 					<div class="contact-info">
 						<div class="contact-item">
 							<i class="fas fa-phone"></i>
-							<span>0696 19 44 25</span>
+							<span class="inpt">012 34 56 78</span>
 						</div>
 						<div class="contact-item">
 							<i class="fas fa-mobile-alt"></i>
-							<span>0664 48 57 15</span>
+							<span class="inpt">087 65 43 21</span>
 						</div>
 						<div class="contact-item">
 							<i class="fas fa-map-marker-alt"></i>
-							<span>Bechar, Algérie</span>
+							<span class="inpt">Bechar, Algérie</span>
 						</div>
 					</div>
 				</header>
@@ -51,65 +111,63 @@
 				<div class="content">
 					<div class="column">
 						<div class="section">
-							<h2 class="section-title">
+							<h2 class="section-title inpt">
 								<i class="fas fa-user"></i> ETAT CIVIL
 							</h2>
 							<div class="info-grid">
 								<div class="info-item">
-									<div class="info-label">Nationalité :</div>
-									<div class="info-value">Algérienne</div>
+									<div class="info-label inpt">Nationalité :</div>
+									<div class="info-value inpt">Algérienne</div>
 								</div>
 								<div class="info-item">
-									<div class="info-label">Date et lieu de naissance :</div>
-									<div class="info-value">
-										04/06/1997 à <strong>Bechar</strong>
+									<div class="info-label inpt">Date et lieu de naissance :</div>
+									<div class="info-value inpt">
+										01/01/1991 à <strong class="inpt">Bechar</strong>
 									</div>
 								</div>
 								<div class="info-item">
-									<div class="info-label">Situation Familiale :</div>
-									<div class="info-value">Célibataire</div>
+									<div class="info-label inpt">Situation Familiale :</div>
+									<div class="info-value inpt">Célibataire</div>
 								</div>
 								<div class="info-item">
-									<div class="info-label">Permis de Conduire :</div>
-									<div class="info-value">Catégorie B</div>
+									<div class="info-label inpt">Permis de Conduire :</div>
+									<div class="info-value inpt">Catégorie B</div>
 								</div>
 								<div class="info-item">
-									<div class="info-label">Service Nationale :</div>
-									<div class="info-value">Dégagé</div>
+									<div class="info-label inpt">Service Nationale :</div>
+									<div class="info-value inpt">Dégagé</div>
 								</div>
 							</div>
 						</div>
 
 						<div class="section">
-							<h2 class="section-title">
+							<h2 class="section-title inpt">
 								<i class="fas fa-graduation-cap"></i> FORMATION
 							</h2>
-							<div class="education-item">
+							<div class="education-item inpt">
 								<span class="year">2015</span>
-								<div class="education-title">Baccalauréat Scientifique</div>
+								<div class="education-title inpt">Baccalauréat Scientifique</div>
 							</div>
-							<div class="education-item">
+							<div class="education-item inpt">
 								<span class="year">2018</span>
-								<div class="education-title">
-									Licence en Physique Rayonnement
-								</div>
+								<div class="education-title">Licence en Physique Rayonnement</div>
 							</div>
-							<div class="education-item">
+							<div class="education-item inpt">
 								<span class="year">2020</span>
 								<div class="education-title">Master 2 en Physique Médicale</div>
 							</div>
 						</div>
 
 						<div class="section">
-							<h2 class="section-title">
+							<h2 class="section-title inpt">
 								<i class="fas fa-language"></i> LANGUES
 							</h2>
-							<div class="language-item">
-								<div class="language-name">Arabe</div>
+							<div class="language-item inpt">
+								<div class="language-name">Français</div>
 								<div class="language-level">Langue Maternelle</div>
 							</div>
-							<div class="language-item">
-								<div class="language-name">Français</div>
+							<div class="language-item inpt">
+								<div class="language-name">Anglais</div>
 								<div class="language-level">
 									Niveau moyen (parler et écrire)
 								</div>
@@ -119,69 +177,69 @@
 
 					<div class="column">
 						<div class="section">
-							<h2 class="section-title">
+							<h2 class="section-title inpt">
 								<i class="fas fa-briefcase"></i> EXPÉRIENCE
 							</h2>
 							<div class="experience-item">
-								<div class="experience-title">Stage Pratique en Radiologie</div>
-								<div class="info-value">15 jours</div>
+								<div class="experience-title inpt">Stage Pratique en Radiologie</div>
+								<div class="info-value inpt">15 jours</div>
 							</div>
 							<div class="experience-item">
-								<div class="experience-title">
+								<div class="experience-title inpt">
 									Stage Pratique en Radiothérapie
 								</div>
-								<div class="info-value">6 mois</div>
+								<div class="info-value inpt">6 mois</div>
 							</div>
 						</div>
 
 						<div class="section">
-							<h2 class="section-title">
+							<h2 class="section-title inpt">
 								<i class="fas fa-star"></i> COMPÉTENCES
 							</h2>
 							<div class="skills-container">
-								<div class="skill-item">
+								<div class="skill-item inpt">
 									<i class="fas fa-check-circle"></i> Sens des responsabilités
 								</div>
-								<div class="skill-item">
+								<div class="skill-item inpt">
 									<i class="fas fa-check-circle"></i> Sérieux au travail
 								</div>
-								<div class="skill-item">
+								<div class="skill-item inpt">
 									<i class="fas fa-check-circle"></i> Sociable
 								</div>
-								<div class="skill-item">
+								<div class="skill-item inpt">
 									<i class="fas fa-check-circle"></i> Bonne communication
 								</div>
-								<div class="skill-item">
+								<div class="skill-item inpt">
 									<i class="fas fa-check-circle"></i> Travail d'équipe
 								</div>
-								<div class="skill-item">
+								<div class="skill-item inpt">
 									<i class="fas fa-check-circle"></i> Organisation
 								</div>
 							</div>
 						</div>
 						<!-- eeeeeeeeeee -->
 						<div class="section">
-							<h2 class="section-title">
+							<h2 class="section-title inpt">
 								<i class="fas fa-certificate"></i> CERTIFICATS
 							</h2>
 							<div class="info-grid">
 								<div class="info-item">
-									<i class="fas fa-award" style="color: #4cc9f0"></i>
-									<div class="info-value">Certificat en Radioprotection</div>
+									<i class="fas fa-award" style="color: var(--color3)"></i>
+									<div class="info-value inpt">Certificat en Radioprotection</div>
 								</div>
 								<div class="info-item">
-									<i class="fas fa-award" style="color: #4cc9f0"></i>
-									<div class="info-value">Formation en Imagerie Médicale</div>
+									<i class="fas fa-award" style="color: var(--color3)"></i>
+									<div class="info-value inpt">Formation en Imagerie Médicale</div>
 								</div>
 							</div>
 						</div>
 
 						<div class="section">
-							<h2 class="section-title">
+							<h2 class="section-title inpt">
 								<i class="fas fa-heart"></i> CENTRES D'INTÉRÊT
 							</h2>
-							<div class="skills-container">
-								<div class="skill-item">
+							<div class="skills-container inpt">
+								<div class="skill-item ">
 									<i class="fas fa-book"></i> Lecture
 								</div>
 								<div class="skill-item">
@@ -216,21 +274,7 @@
 		<script>
 			
 
-			/* function changeGlobalFont(newFont) {
-    // الوصول إلى العنصر الجذر (<html>) لتغيير متغيرات CSS
-    const rootElement = document.documentElement; // هذا يمثل العنصر <html>
-
-    // تغيير قيمة المتغير --main-font
-    rootElement.style.setProperty('--main-font', newFont);
-}
-
-// أمثلة على الاستخدام:
-
-// لتغيير الخط إلى 'Times New Roman'
-changeGlobalFont("'Times New Roman', serif");
-
-// لتغيير الخط إلى 'Verdana' */
-			// changeGlobalFont("'Verdana', sans-serif");
+			
 		</script>
 	</body>
 </html>

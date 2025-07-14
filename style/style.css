@@ -3,14 +3,22 @@
 	--main-color: #ddd;
 	--mnClOp: #2196f3c2;
 	--gr: #028679;
-	--animation: ;
+	--main-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	--font-size: 10;
+	--color1: #1a3a6c;
+	--color2: #2c5282;
+	--color3: #4cc9f0;
+	--height-width-profile: 160;
+	--border-radius-profile: 50;
+	--height-img: 100;
+	--border-div : 1px solid var(--color3);
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-family: var(--main-font);
 }/* 
 *:focus-visible{
 	caret-shape: underscore;
@@ -27,15 +35,21 @@ body {
 	flex-direction: column;
 }
 
-.cv-container {
-	width: 770px;
-	height: 30.3cm;
+.cv-container , .prmtr-container {
 	background: white;
 	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 	border-radius: 12px;
 	position: relative;
 	padding: 50px;
 	margin: 20px 0; /* = 0 on print */
+}
+.cv-container {
+	width: 770px;
+	height: 30.3cm;
+}
+.prmtr-container {
+	width: 900px;
+	padding: 20px 40px;
 }
 
 .page {
@@ -68,21 +82,21 @@ header {
 
 .profile-photo {
 	display: flex;
-	width: 160px;
-	height: 160px;
-	border-radius: 50%;
+	width: calc(var(--height-width-profile) * 1px);
+	height: calc(var(--height-width-profile) * 1px);
+	border-radius:calc(var(--border-radius-profile) * 1%) ;
 	object-fit: cover;
 	overflow: hidden;
 	background: linear-gradient(45deg, #1a3a6c, #4cc9f0);
 	align-items: center;
 	justify-content: center;
 	color: white;
-	font-size: 70px;
+	font-size: calc(var(--font-size) * 7px);
 	cursor: pointer;
 	position: relative;
 }
 .profile-photo img{
-	height: 100%;
+	height: calc(var(--height-img) * 1%);
 }
 .profile-photo:hover .imgCv {
 	display: flex;
@@ -108,22 +122,22 @@ header {
 #errImg {
 	color: red;
 	display: none;
-	font-size: 20px;
+	font-size: calc(var(--font-size) * 2px);
 	position: absolute;
 	text-align: center;
 }
 .name {
-	font-size: 36px;
+	font-size: calc(var(--font-size) * 3.6px);
 	font-weight: 700;
-	color: #1a3a6c;
+	color:  var(--color1);
 	margin-bottom: 5px;
 	letter-spacing: 1px;
 }
 
 .title {
-	font-size: 28px;
+	font-size:  calc(var(--font-size) * 2.8px);
 	font-weight: 600;
-	color: #2c5282;
+	color: var(--color2);
 	margin-bottom: 20px;
 	position: relative;
 	display: inline-block;
@@ -147,7 +161,7 @@ header {
 	flex-wrap: wrap;
 	gap: 25px;
 	margin-top: 20px;
-	font-size: 16px;
+	font-size: calc(var(--font-size) * 1.6px);
 	background: #f0f7ff;
 	padding: 15px;
 	border-radius: 10px;
@@ -159,20 +173,20 @@ header {
 	display: flex;
 	align-items: center;
 	gap: 8px;
-	color: #1a3a6c;
+	color: var(--color1);
 	font-weight: 500;
 }
 
 .contact-item i {
-	color: #4cc9f0;
-	font-size: 18px;
+	color: var(--color3);
+	font-size: calc(var(--font-size) * 1.8px);
 	width: 24px;
 	text-align: center;
 }
 
 .address {
-	font-size: 16px;
-	color: #2c5282;
+	font-size: calc(var(--font-size) * 1.6px);
+	color: var(--color2);
 	font-weight: 500;
 	margin-top: 10px;
 }
@@ -194,14 +208,14 @@ header {
 	background: #ffffff;
 	border-radius: 10px;
 	padding: 15px;
-	border: 1px solid #4cc9f0;
+	border: var(--border-div);
 	border-left: 4px solid #4cc9f0;
 }
 
 .section-title {
-	font-size: 20px;
+	font-size: calc(var(--font-size) * 2px);
 	font-weight: 700;
-	color: #1a3a6c;
+	color: var(--color1);
 	margin-bottom: 10px;
 	padding-bottom: 8px;
 	border-bottom: 2px solid #e4edf5;
@@ -211,7 +225,7 @@ header {
 }
 
 .section-title i {
-	color: #4cc9f0;
+	color: var(--color3);
 	width: 24px;
 	text-align: center;
 }
@@ -229,7 +243,7 @@ header {
 
 .info-label {
 	font-weight: 600;
-	color: #2c5282;
+	color: var(--color2);
 	min-width: 160px;
 }
 
@@ -247,7 +261,7 @@ header {
 .education-title,
 .experience-title {
 	font-weight: 600;
-	color: #2c5282;
+	color: var(--color2);
 	margin-bottom: 3px;
 	display: inline;
 	margin-left: 5px;
@@ -255,10 +269,10 @@ header {
 
 .year {
 	background: #e4edf5;
-	color: #2c5282;
+	color: var(--color2);
 	padding: 3px 10px;
 	border-radius: 4px;
-	font-size: 14px;
+	font-size: calc(var(--font-size) * 1.4px);
 	display: inline-block;
 	margin-bottom: 8px;
 	font-weight: 600;
@@ -274,16 +288,16 @@ header {
 	background: #e4edf5;
 	padding: 8px 15px;
 	border-radius: 30px;
-	font-size: 11px;
+	font-size: calc(var(--font-size) *1.2px);
 	font-weight: 500;
-	color: #2c5282;
+	color: var(--color2);
 	display: flex;
 	align-items: center;
 	gap: 8px;
 }
 
 .skill-item i {
-	color: #4cc9f0;
+	color: var(--color3);
 }
 
 .language-item {
@@ -299,7 +313,7 @@ header {
 
 .language-name {
 	font-weight: 600;
-	color: #2c5282;
+	color: var(--color2);
 }
 
 .language-level {
@@ -314,7 +328,7 @@ header {
 	text-align: right;
 	font-style: italic;
 	color: #666;
-	font-size: 14px;
+	font-size: calc(var(--font-size) * 1.4px);
 }
 
 .watermark {
@@ -322,9 +336,9 @@ header {
 	bottom: 30px;
 	left: 40px;
 	opacity: 0.1;
-	font-size: 100px;
+	font-size: calc(var(--font-size) * 10px);
 	font-weight: 800;
-	color: #1a3a6c;
+	color: var(--color1);
 	transform: rotate(-15deg);
 	pointer-events: none;
 }
@@ -339,11 +353,11 @@ header {
 	}
 
 	.name {
-		font-size: 30px;
+		font-size: calc(var(--font-size) * 3px);
 	}
 
 	.title {
-		font-size: 24px;
+		font-size: calc(var(--font-size) * 2.4px);
 	}
 
 	.contact-info {
@@ -355,12 +369,12 @@ header {
 	.profile-photo {
 		width: 120px;
 		height: 120px;
-		font-size: 50px;
+		font-size: calc(var(--font-size) * 5px);
 	}
 }
 .btnPdf {
 	color: white;
-	font-size: 4vh;
+	font-size: calc(var(--font-size) * 3px);
 	background: var(--mnCl);
 	margin: 20px auto 10px;
 	padding: 5px 20px;
